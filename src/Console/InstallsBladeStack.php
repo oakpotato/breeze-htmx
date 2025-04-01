@@ -17,11 +17,7 @@ trait InstallsBladeStack
         // NPM Packages...
         $this->updateNodePackages(function ($packages) {
             return [
-                '@tailwindcss/forms' => '^0.5.2',
-                'alpinejs' => '^3.4.2',
-                'autoprefixer' => '^10.4.2',
-                'postcss' => '^8.4.31',
-                'tailwindcss' => '^3.1.0',
+                'htmx.org' => '^2.0.4', // Add htmx.org
             ] + $packages;
         });
 
@@ -41,7 +37,6 @@ trait InstallsBladeStack
             $this->removeDarkClasses((new Finder)
                 ->in(resource_path('views'))
                 ->name('*.blade.php')
-                ->notPath('livewire/welcome/navigation.blade.php')
                 ->notName('welcome.blade.php')
             );
         }
@@ -63,11 +58,7 @@ trait InstallsBladeStack
         $this->replaceInFile('/home', '/dashboard', resource_path('views/welcome.blade.php'));
         $this->replaceInFile('Home', 'Dashboard', resource_path('views/welcome.blade.php'));
 
-        // Tailwind / Vite...
-        copy(__DIR__.'/../../stubs/default/tailwind.config.js', base_path('tailwind.config.js'));
-        copy(__DIR__.'/../../stubs/default/postcss.config.js', base_path('postcss.config.js'));
-        copy(__DIR__.'/../../stubs/default/vite.config.js', base_path('vite.config.js'));
-        copy(__DIR__.'/../../stubs/default/resources/css/app.css', resource_path('css/app.css'));
+        // HTMX...
         copy(__DIR__.'/../../stubs/default/resources/js/app.js', resource_path('js/app.js'));
 
         $this->components->info('Installing and building Node dependencies.');
