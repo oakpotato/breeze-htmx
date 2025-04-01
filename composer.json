@@ -1,13 +1,17 @@
 {
-    "name": "laravel/breeze",
+    "name": "oakpotato/breeze",
     "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
     "keywords": ["laravel", "auth"],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/laravel/breeze/issues",
-        "source": "https://github.com/laravel/breeze"
+        "issues": "https://github.com/oakpotato/breeze-htmx/issues",
+        "source": "https://github.com/oakpotato/breeze-htmx"
     },
     "authors": [
+        {
+            "name": "Albert Thomas",
+            "email": "code@oakpotato.com"
+        },
         {
             "name": "Taylor Otwell",
             "email": "taylor@laravel.com"
@@ -28,13 +32,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Laravel\\Breeze\\": "src/"
+            "OakPotato\\Breeze-HTMX\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Laravel\\Breeze\\BreezeServiceProvider"
+                "OakPotato\\Breeze-HTMX\\BreezeServiceProvider"
             ]
         }
     },
