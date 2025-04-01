@@ -1,1 +1,1 @@
-Custom starter kit is for Laravel 11.x and prior.
+Custom starter kit is for Laravel that adds just HTMX.
